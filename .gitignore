@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+
+backend/.data/
+backend/uploads/
+
+.vercel
+.DS_Store
+*.log

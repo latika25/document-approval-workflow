@@ -1,0 +1,41 @@
+{
+  "name": "document-approval-workflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Document approval workflow: submitters upload documents, reviewers approve or reject them.",
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=22",
+    "yarn": "^1.22.0"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,magenta \"yarn workspace backend dev\" \"yarn workspace frontend dev\"",
+    "build": "yarn workspace backend build && yarn workspace frontend build",
+    "start": "yarn workspace backend start",
+    "test": "yarn workspace backend test && yarn workspace frontend test",
+    "db:setup": "yarn workspace backend db:setup",
+    "db:reset": "yarn workspace backend db:reset",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "yarn workspace backend typecheck && yarn workspace frontend typecheck",
+    "verify": "yarn format:check && yarn lint && yarn typecheck"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10",
+    "concurrently": "^10",
+    "eslint": "^10",
+    "eslint-config-prettier": "^10.1.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-react-refresh": "^0.5",
+    "globals": "^17",
+    "prettier": "^3.6.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.0"
+  }
+}
