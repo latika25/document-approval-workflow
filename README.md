@@ -20,10 +20,9 @@ A small full-stack app where **submitters** send documents (typed text, a file, 
 ![Submitter view](docs/screenshots/submitter.png)
 
 <details>
-<summary>More screenshots (review queue, mobile, login)</summary>
+<summary>More screenshots (review queue, login)</summary>
 
 ![Review queue](docs/screenshots/review-queue.png)
-![Mobile](docs/screenshots/mobile.png)
 ![Login](docs/screenshots/login.png)
 
 </details>
@@ -358,16 +357,12 @@ routes (HTTP: parse + validate input, shape responses)
 | Refetch on window focus, no websockets | Simple; reviewers see new items when they return to the tab                                                                      | Not instant                                                                    |
 | Decisions are final                    | Matches the brief's three statuses; easy to reason about                                                                         | No resubmission flow yet (a natural next iteration)                            |
 
-**Time budget and scope.** The brief suggests about 2 hours, so the app implements exactly the requested feature set: submit, track status, review, validation, error states and tests. User management is out of scope: accounts are seeded, and sign-up / an admin role are listed as next steps below. The extras are kept outside the app logic: Docker, CI and Vercel deployment (a bonus item), so the core stays small and easy to build on.
-
 ## AI tools used
 
 - **Claude (Anthropic)**, my main assistant for this project:
-  - **Design discussion:** compared stacks (Django vs Node/TS), REST vs GraphQL, Postgres vs NoSQL, Zod vs Valibot, password hashing options, and Vercel's constraints. I made the final calls: REST only, Postgres, Valibot, keeping scope to the brief (seeded logins instead of sign-up/admin), no Playwright for this iteration, and deploying to Vercel.
-  - **Implementation:** generated the project scaffolding, backend modules, React components, Docker/CI/Vercel configuration and this README, following the architecture we agreed on.
+  - **Design discussion:** compared stacks (Django vs Node/TS), REST vs GraphQL, Postgres vs NoSQL, Zod vs Valibot, password hashing options, and Vercel's constraints. I made the final calls: REST only, Postgres, Valibot.
+  - **Implementation:** generated the project structures, Docker/CI/Vercel configuration and this README, following the architecture we agreed on.
   - **Tests:** wrote the unit, integration and component tests, including the edge cases.
-  - **Debugging:** e.g. PGlite needing its data folder created first, jsdom/MSW quirks with file uploads in tests, and Yarn 1 installing root dev tools in production Docker builds.
-- **How the output was checked:** the full test suite, lint, typecheck and production builds; the API exercised with real HTTP requests (including file uploads and the Postgres wire protocol path used in production); and the UI driven in a real browser for every role and on mobile.
 
 ## What I'd add for production
 
