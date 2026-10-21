@@ -185,7 +185,7 @@ Tests live **next to the code they test** as `*.spec.ts` / `*.spec.tsx` (e.g. `s
 - Approve/reject, required reject comment, "already reviewed" (409).
 - The API client builds the multipart upload correctly, sends the token, and turns error responses into typed errors (`endpoints.spec.ts`).
 
-CI (GitHub Actions) runs format check, lint, typecheck, all tests on **Node 22 and Node 24**, both builds and a Docker build on every push and pull request.
+CI (GitHub Actions) runs format check, lint, typecheck, all tests, both builds and a Docker build on every push and pull request.
 
 ## API design
 
