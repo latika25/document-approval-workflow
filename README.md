@@ -6,7 +6,7 @@ A small full-stack app where **submitters** send documents (typed text, a file, 
 | ------------------------ | ----------------------------------- |
 | 🌐 Live demo             | https://document-approval-workflow-kyxh.vercel.app |
 | 📘 API docs              | https://document-approval-workflow-rust.vercel.app/api/docs |
-| 🎥 Video walkthrough     | _add the Loom link_ |
+| 🎥 Video walkthrough     | adding... |
 
 **Demo accounts** (seeded automatically, also listed on the login page; there is no sign-up in this iteration):
 
@@ -193,7 +193,6 @@ Interactive docs: **`/api/docs`** (Swagger UI). The raw OpenAPI 3 spec is at `/a
 
 **Conventions**
 
-- JSON in and out, except creating a submission, which is `multipart/form-data` because it can carry a file.
 - Auth: `Authorization: Bearer <token>` from `POST /api/auth/login`.
 - Every error has the same shape, with a stable `code` the frontend can branch on:
 
@@ -261,15 +260,6 @@ List responses are wrapped with paging info: `{ "items": [...], "page": 1, "page
 | 413  | File too large                                                                    |
 | 415  | File type not allowed                                                             |
 | 429  | Too many login or upload attempts                                                 |
-
-### Reasoning
-
-- **Resources, not actions.** Submissions are a resource. A review is an update to its status (`PATCH …/status`), matching the brief's "updating a submission's status". The server only allows valid transitions, so the endpoint can't be used to set arbitrary states.
-- **One endpoint, scoped by role.** `GET /api/submissions` serves both "my submissions" and the reviewer queue; the server decides what you can see. Clients can't ask for more than they're allowed.
-- **Multipart only where needed.** File upload is the one place a JSON body doesn't fit. Text-only submissions can also be sent as JSON.
-- **Files never get public URLs.** Downloads go through `GET …/file`, which checks the same permissions as viewing the submission.
-- **The user payload includes `permissions`.** The frontend shows navigation and controls by permission (e.g. `submissions:review`), not by hard-coded role names. Adding a role is a backend-only change.
-- **Stable error codes.** The UI branches on `code` (e.g. `ALREADY_REVIEWED`), never on message text.
 
 ## Major decisions
 
