@@ -128,7 +128,6 @@ export function createSubmissionsRepository(db: Database) {
     return { items: rows.map(toSubmission), total: countRow?.total ?? 0 };
   }
 
-  // The status check in WHERE makes this atomic: if two reviewers race, only one update matches.
   async function recordDecision(input: {
     id: string;
     status: ReviewDecision;

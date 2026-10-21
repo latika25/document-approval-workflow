@@ -6,7 +6,7 @@ A small full-stack app where **submitters** send documents (typed text, a file, 
 | -------------------- | ----------------------------------------------------------- |
 | 🌐 Live demo         | https://document-approval-workflow-kyxh.vercel.app          |
 | 📘 API docs          | https://document-approval-workflow-rust.vercel.app/api/docs |
-| 🎥 Video walkthrough | adding...                                                   |
+| 🎥 Video walkthrough | https://www.loom.com/share/6ae7309437624640a733cf76f9d47b1f |
 
 **Demo accounts** (seeded automatically, also listed on the login page; there is no sign-up in this iteration):
 
