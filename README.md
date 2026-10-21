@@ -4,9 +4,9 @@ A small full-stack app where **submitters** send documents (typed text, a file, 
 
 | Link                     |                                     |
 | ------------------------ | ----------------------------------- |
-| 🌐 Live demo             | _TODO: add the Vercel URL_          |
-| 🎥 Video walkthrough     | _TODO: add the Loom link_           |
-| 📘 API docs (Swagger UI) | `/api/docs` on any running instance |
+| 🌐 Live demo             | https://document-approval-workflow-kyxh.vercel.app |
+| 📘 API docs              | https://document-approval-workflow-rust.vercel.app/api/docs |
+| 🎥 Video walkthrough     | _add the Loom link_ |
 
 **Demo accounts** (seeded automatically, also listed on the login page; there is no sign-up in this iteration):
 
