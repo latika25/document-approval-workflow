@@ -2,11 +2,11 @@
 
 A small full-stack app where **submitters** send documents (typed text, a file, or both) for review, **reviewers** approve or reject them with a comment, and submitters track the status.
 
-| Link                     |                                     |
-| ------------------------ | ----------------------------------- |
-| 🌐 Live demo             | https://document-approval-workflow-kyxh.vercel.app |
-| 📘 API docs              | https://document-approval-workflow-rust.vercel.app/api/docs |
-| 🎥 Video walkthrough     | adding... |
+| Link                 |                                                             |
+| -------------------- | ----------------------------------------------------------- |
+| 🌐 Live demo         | https://document-approval-workflow-kyxh.vercel.app          |
+| 📘 API docs          | https://document-approval-workflow-rust.vercel.app/api/docs |
+| 🎥 Video walkthrough | adding...                                                   |
 
 **Demo accounts** (seeded automatically, also listed on the login page; there is no sign-up in this iteration):
 
